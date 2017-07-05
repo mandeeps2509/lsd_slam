@@ -9,6 +9,8 @@ project(lsd_slam_core)
 #  MinSizeRel : w/o debug symbols, w/ optimization, stripped binaries
 set(CMAKE_BUILD_TYPE Release)
 
+find_package(cmake_modules REQUIRED)	#to build on Ubuntu 16.04 using ROS Kinetic
+
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge
   dynamic_reconfigure
@@ -97,7 +99,7 @@ include_directories(
 
 # build shared library.
 add_library(lsdslam SHARED ${SOURCE_FILES})
-target_link_libraries(lsdslam ${FABMAP_LIB} ${G2O_LIBRARIES} ${catkin_LIBRARIES} csparse cxsparse )
+target_link_libraries(lsdslam ${FABMAP_LIB} ${G2O_LIBRARIES} ${catkin_LIBRARIES} csparse cxsparse X11) #added X11
 #rosbuild_link_boost(lsdslam thread)
 
 
@@ -109,6 +111,10 @@ target_link_libraries(live_slam lsdslam ${catkin_LIBRARIES} ${G2O_LIBRARIES})
 # build image node
 add_executable(dataset src/main_on_images.cpp)
 target_link_libraries(dataset lsdslam ${catkin_LIBRARIES} ${G2O_LIBRARIES})
+
+##########################################
+include_directories(${catkin_INCLUDE_DIRS})	#to use ros/ros.h library on Ubuntu 16.04 and ROS Kinetic
+						#source credit: http://answers.ros.org/question/237494/fatal-error-rosrosh-no-such-file-or-directory/
 
 # TODO add INSTALL
 

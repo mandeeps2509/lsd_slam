@@ -13,6 +13,8 @@ ADD_SUBDIRECTORY(${PROJECT_SOURCE_DIR}/thirdparty/Sophus)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
 
+find_package(cmake_modules REQUIRED)	#to build on Ubuntu 16.04 using ROS Kinetic
+
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge
   dynamic_reconfigure
@@ -76,6 +78,11 @@ target_link_libraries(viewer ${QGLViewer_LIBRARIES}
 			     ${QT_LIBRARIES}
 			     GL glut GLU
 		     )
+
+##########################################
+include_directories(${catkin_INCLUDE_DIRS})	#to use ros/ros.h library on Ubuntu 16.04 and ROS Kinetic
+						#source credit: http://answers.ros.org/question/237494/fatal-error-rosrosh-no-such-file-or-directory/
+
 
 #add_executable(videoStitch src/main_stitchVideos.cpp)
 #target_link_libraries(viewer ${QGLViewer_LIBRARIES}

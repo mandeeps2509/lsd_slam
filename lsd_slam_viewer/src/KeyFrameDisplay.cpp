@@ -28,7 +28,8 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 
-#include "opencv2/opencv.hpp"
+//#include "opencv2/opencv.hpp" 	 
+//---dirty trick----commenting due to naming conflict between OpenCV and xlib macro status (issue 237)
 
 #include "ros/package.h"
 
