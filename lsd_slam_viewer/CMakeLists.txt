@@ -13,6 +13,8 @@ ADD_SUBDIRECTORY(${PROJECT_SOURCE_DIR}/thirdparty/Sophus)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
 
+SET(EIGEN_INCLUDE_DIR "/home/mandeep/lsd_slam/eigen-eigen-bdd17ee3b1b3")	#eigen version problem: using 3.2.5-4 as stated in issue 238
+
 find_package(cmake_modules REQUIRED)	#to build on Ubuntu 16.04 using ROS Kinetic
 
 find_package(catkin REQUIRED COMPONENTS
@@ -29,7 +31,7 @@ find_package(OpenGL REQUIRED)
 set(QT_USE_QTOPENGL TRUE)
 set(QT_USE_QTXML TRUE)
 find_package(QGLViewer REQUIRED)
-find_package(Eigen REQUIRED)
+#find_package(Eigen REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(Boost REQUIRED COMPONENTS thread)
 

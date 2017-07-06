@@ -9,6 +9,8 @@ project(lsd_slam_core)
 #  MinSizeRel : w/o debug symbols, w/ optimization, stripped binaries
 set(CMAKE_BUILD_TYPE Release)
 
+SET(EIGEN3_INCLUDE_DIR "/home/mandeep/lsd_slam/eigen-eigen-bdd17ee3b1b3")	#eigen version problem: using 3.2.5-4 as stated in issue 238
+
 find_package(cmake_modules REQUIRED)	#to build on Ubuntu 16.04 using ROS Kinetic
 
 find_package(catkin REQUIRED COMPONENTS
@@ -20,7 +22,7 @@ find_package(catkin REQUIRED COMPONENTS
   rosbag
 )
 
-find_package(Eigen REQUIRED)
+#find_package(Eigen REQUIRED)
 find_package(X11 REQUIRED)
 include(cmake/FindG2O.cmake)
 include(cmake/FindSuiteParse.cmake)
