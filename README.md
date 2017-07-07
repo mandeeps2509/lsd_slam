@@ -7,7 +7,7 @@ where you can also find the corresponding publications and Youtube videos, as we
 example-input datasets, and the generated output as rosbag or .ply point cloud.
 
 
-## Use catkin branch to build on Ubuntu 16.04 with ROS Kinetic
+## *Catkin branch: FIXED to build on Ubuntu 16.04 with ROS Kinetic*
 
 
 ### Related Papers
@@ -108,6 +108,11 @@ If you want to use openFABMAP for large loop closure detection, uncomment the fo
 You need to get a full version of OpenCV with nonfree module, which is easiest by compiling your own version. 
 We suggest to use the [2.4.8](https://github.com/Itseez/opencv/releases/tag/2.4.8) version, to assure compatibility with the current indigo open-cv package.
 
+
+
+## 2.4 ROS Kinetic + Ubuntu 16.04
+catkin usage to build: http://visbot.blogspot.in/2014/11/tutorial-building-of-lsd-slam-on-ros.html
+Use updated catkin branch to build
 
 
 
