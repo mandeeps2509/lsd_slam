@@ -7,6 +7,9 @@ where you can also find the corresponding publications and Youtube videos, as we
 example-input datasets, and the generated output as rosbag or .ply point cloud.
 
 
+## Use catkin branch to build on Ubuntu 16.04 with ROS Kinetic
+
+
 ### Related Papers
 
 * **LSD-SLAM: Large-Scale Direct Monocular SLAM**, *J. Engel, T. Schöps, D. Cremers*, ECCV '14
